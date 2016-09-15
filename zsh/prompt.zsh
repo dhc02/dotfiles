@@ -13,6 +13,11 @@ git_branch() {
   echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
+git_short_sha () {
+  # Formats prompt string for current git commit short SHA
+  echo "($($git rev-parse --short HEAD 2> /dev/null))"
+}
+
 git_dirty() {
   if $(! $git status -s &> /dev/null)
   then
@@ -20,9 +25,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg_bold[green]%}$(git_prompt_info)$(git_short_sha)%{$reset_color%}"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg_bold[red]%}$(git_prompt_info)$(git_short_sha)%{$reset_color%}"
     fi
   fi
 }
