@@ -27,6 +27,7 @@ brew 'wget'
 brew 'youtube-dl'
 
 cask '1password'
+cask 'xquartz'
 cask 'atom'
 cask 'google-chrome'
 cask 'handbrake'
