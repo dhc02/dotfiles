@@ -7,7 +7,7 @@ brew 'ack'
 brew 'coreutils'
 brew 'go'
 brew 'grc'
-brew 'herkou'
+brew 'heroku'
 brew 'imagemagick'
 brew 'jp2a'
 brew 'libcaca', args: ['with-imlib2']
