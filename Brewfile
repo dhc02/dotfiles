@@ -5,6 +5,7 @@ tap 'puma/puma'
 
 brew 'ack'
 brew 'coreutils'
+brew 'elixir'
 brew 'go'
 brew 'grc'
 brew 'heroku'
