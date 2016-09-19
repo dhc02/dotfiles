@@ -18,6 +18,10 @@
     abbreviateValues: true
     automaticReplace: true
   core:
+    customFileTypes:
+      "text.xml.plist": [
+        "plist"
+      ]
     disabledPackages: [
       "background-tips"
       "exception-reporting"
@@ -49,6 +53,8 @@
     softWrap: true
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
+  "git-diff":
+    showIconsInEditorGutter: true
   "git-plus":
     gitPath: "/usr/local/bin/hub"
     pullBeforePush: "pull --rebase"
@@ -89,6 +95,12 @@
   welcome:
     showOnStartup: false
 ".diff":
+  editor:
+    softWrapHangingIndent: 2
+".plist.source":
+  editor:
+    softWrapHangingIndent: 2
+".plist.text.xml":
   editor:
     softWrapHangingIndent: 2
 ".text.todo":
