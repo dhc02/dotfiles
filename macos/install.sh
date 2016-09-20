@@ -3,5 +3,8 @@
 # command line interface to it that we can use to just install everything, so
 # yeah, let's do that.
 
-echo "› sudo softwareupdate -i -a"
-sudo softwareupdate -i -a
+#####
+# Actually, don't do this because it requires typing a password into the command prompt and we'd like to be able to run dot headless once per day.
+#####
+# echo "› sudo softwareupdate -i -a"
+# sudo softwareupdate -i -a
