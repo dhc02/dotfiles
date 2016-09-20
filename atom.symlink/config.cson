@@ -1,4 +1,7 @@
 "*":
+  "advanced-open-file":
+    createDirectories: true
+    createFileInstantly: true
   "atom-material-ui":
     colors:
       abaseColor:
@@ -62,6 +65,9 @@
     goPath: "/Users/holman/Code/go"
   linter:
     showErrorPanel: false
+  "linter-elixirc":
+    elixircPath: "/usr/local/bin/elixirc"
+    mixPath: "/usr/local/bin/mix"
   "linter-eslint":
     useGlobalEslint: true
   "linter-htmlhint": {}
