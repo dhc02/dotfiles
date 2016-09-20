@@ -1,0 +1,4 @@
+'.source.elixir':
+  'IO Log':
+    'prefix': 'cl'
+    'body': "IO.inspect $1"
