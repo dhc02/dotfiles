@@ -60,8 +60,11 @@
     pullBeforePush: "pull --rebase"
   "go-plus":
     goPath: "/Users/holman/Code/go"
+  linter:
+    showErrorPanel: false
   "linter-eslint":
     useGlobalEslint: true
+  "linter-htmlhint": {}
   "merge-conflicts":
     gitPath: "/usr/local/bin/hub"
   minimap:
