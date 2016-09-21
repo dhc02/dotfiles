@@ -63,8 +63,7 @@
     pullBeforePush: "pull --rebase"
   "go-plus":
     goPath: "/Users/holman/Code/go"
-  linter:
-    showErrorPanel: false
+  linter: {}
   "linter-elixirc":
     elixircPath: "/usr/local/bin/elixirc"
     mixPath: "/usr/local/bin/mix"
