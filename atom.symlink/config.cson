@@ -41,6 +41,7 @@
       "node_modules"
     ]
     projectHome: "/Users/Donnie/Projects"
+    telemetryConsent: "limited"
     themes: [
       "atom-material-ui"
       "atom-material-syntax"
