@@ -4,11 +4,7 @@
     createFileInstantly: true
   "atom-material-ui":
     colors:
-      abaseColor:
-        red: 33
-        green: 150
-        blue: 243
-        alpha: 1
+      abaseColor: "#2196f3"
       predefinedColor: "Blue"
     fonts:
       fontSize: 14
