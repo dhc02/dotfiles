@@ -50,7 +50,7 @@
       "atom-material-syntax"
     ]
   editor:
-    fontFamily: "Menlo"
+    fontFamily: "Hack"
     invisibles: {}
     showIndentGuide: true
     softWrap: true
