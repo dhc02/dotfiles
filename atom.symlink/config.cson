@@ -13,6 +13,9 @@
       compactList: true
     ui:
       panelContrast: true
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    enableAutoConfirmSingleSuggestion: false
   "color-picker":
     abbreviateValues: true
     automaticReplace: true
