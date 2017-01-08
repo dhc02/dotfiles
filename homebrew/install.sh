@@ -21,4 +21,21 @@ then
 
 fi
 
+# Upgrade homebrew
+echo "---------------------
+› brew update
+---------------------"
+brew update
+echo "---------------------
+› brew upgrade
+---------------------"
+brew upgrade
+
+# Run Homebrew through the Brewfile
+echo "---------------------
+› brew bundle
+---------------------"
+brew bundle
+
+
 exit 0

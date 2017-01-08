@@ -59,8 +59,8 @@
   "git-diff":
     showIconsInEditorGutter: true
   "git-plus":
-    gitPath: "/usr/local/bin/hub"
-    pullBeforePush: "pull --rebase"
+    general:
+      _analyticsUserId: "8141331e-7433-44cc-8e08-0c3dbeff3e0b"
   "go-plus":
     goPath: "/Users/holman/Code/go"
   linter: {}

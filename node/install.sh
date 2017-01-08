@@ -4,5 +4,7 @@ then
   sudo npm install spoof -g
 fi
 
-echo "> npm update -g"
+echo "---------------------
+› npm update -g
+---------------------"
 npm update -g
