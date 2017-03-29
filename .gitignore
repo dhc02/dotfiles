@@ -10,3 +10,5 @@ atom.symlink/git-time-machine
 atom.symlink/split-diff
 
 git/gitconfig.local.symlink
+
+npm-debug.log
