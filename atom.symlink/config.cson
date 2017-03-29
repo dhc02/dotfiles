@@ -2,6 +2,8 @@
   "advanced-open-file":
     createDirectories: true
     createFileInstantly: true
+    fuzzyMatch: true
+    helmDirSwitch: true
   "atom-material-ui":
     colors:
       abaseColor: "#2196f3"
@@ -74,6 +76,8 @@
     gitPath: "/usr/local/bin/hub"
   minimap:
     plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
       selection: true
