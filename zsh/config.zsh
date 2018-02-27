@@ -7,6 +7,9 @@ fi
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
+# necessary so crystal-lang can find ssl stuff
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+
 fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)
