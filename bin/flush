@@ -1,0 +1,5 @@
+#/usr/bin/bash
+#
+# flush the local DNS cache
+
+dscacheutil -flushcache
