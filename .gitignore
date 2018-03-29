@@ -12,3 +12,5 @@ atom.symlink/split-diff
 git/gitconfig.local.symlink
 
 npm-debug.log
+node_modules
+package-lock.json
