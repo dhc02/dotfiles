@@ -9,3 +9,6 @@ then
   alias ll="gls -l --color"
   alias la='gls -A --color'
 fi
+
+# what's happening?
+alias con="tail -40 -f /var/log/system.log"
