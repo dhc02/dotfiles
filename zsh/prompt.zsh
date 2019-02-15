@@ -61,6 +61,11 @@ ruby_version() {
   then
     echo "$(rvm-prompt | awk '{print $1}')"
   fi
+
+  if (( $+commands[ruby] ))
+  then
+    echo "ruby-$(asdf current ruby | awk '{print $1}')"
+  fi
 }
 
 elixir_version() {
@@ -92,11 +97,15 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)| $(elixir_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
 
+# export PROMPT=$'\n$(rb_prompt)| $(elixir_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+# set_prompt () {
+#   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
+# }
 precmd() {
   title "zsh" "%m" "%55<...<%~"
   set_prompt
