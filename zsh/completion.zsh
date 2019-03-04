@@ -13,5 +13,8 @@ setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
 
-# use antibody to load further plugins and completions
-antibody bundle < $ZSH/zsh/zsh-plugins.txt
+source $ZSH/zsh/zsh_plugins.sh
+
+# make up and down arrow keys work with zsh-users/zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down

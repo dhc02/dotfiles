@@ -1,1 +1,12 @@
 robbyrussell/oh-my-zsh path:plugins/aws
+zdharma/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions
+marzocchi/zsh-notify
+kiurchv/asdf.plugin.zsh
+zpm-zsh/autoenv
+MikeDacre/careful_rm
+gusaiani/elixir-oh-my-zsh
+joow/youtube-dl
+agkozak/zsh-z
