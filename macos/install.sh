@@ -207,15 +207,15 @@ sudo nvram SystemAudioVolume=" "
 # defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 # running "Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons"
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-  defaults write "${domain}" dontAutoLoad -array \
-    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
-done;
-defaults write com.apple.systemuiserver menuExtras -array \
-  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+# for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+#   defaults write "${domain}" dontAutoLoad -array \
+#     "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+#     "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+#     "/System/Library/CoreServices/Menu Extras/User.menu"
+# done;
+# defaults write com.apple.systemuiserver menuExtras -array \
+#   "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+#   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
   # "/System/Library/CoreServices/Menu Extras/Battery.menu" \
   # "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
@@ -315,7 +315,7 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # running "Use scroll gesture with the Ctrl (^) modifier key to zoom"
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-running "Follow the keyboard focus while zoomed in"
+# running "Follow the keyboard focus while zoomed in"
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # running "Disable press-and-hold for keys in favor of key repeat"
@@ -700,7 +700,7 @@ defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 ###############################################################################
-bot "Address Book, Dashboard, iCal, TextEdit, and Disk Utility"
+# bot "Address Book, Dashboard, iCal, TextEdit, and Disk Utility"
 ###############################################################################
 
 # running "Enable the debug menu in Address Book"
