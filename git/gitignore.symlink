@@ -1,3 +1,8 @@
-.DS_Store
-*~
 *.swp
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
+._*
+id_rsa
+node_modules

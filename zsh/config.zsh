@@ -8,15 +8,15 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 
 # necessary so crystal-lang can find ssl stuff
-export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+# export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
 
 fpath=($ZSH/functions $fpath)
 
 autoload -U $ZSH/functions/*(:t)
 
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
@@ -40,6 +40,9 @@ setopt HIST_REDUCE_BLANKS
 #   like: git comm-[tab]
 setopt complete_aliases
 
+# type a directory name and hit enter to cd to that directory
+setopt auto_cd
+
 zle -N newtab
 
 bindkey '^[^[[D' backward-word
@@ -49,3 +52,6 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+# use delete key (or fn+delete on mac keyboards) to delete instead of inserting a ~ character
+bindkey '^[[3~' delete-char
+bindkey '^[3;5~' delete-char
