@@ -30,9 +30,11 @@ fi
       # =========================[ Line #1 ]=========================
       # os_icon               # os identifier
       dir                     # current directory
+      dir_writable
       vcs                     # git status
       # =========================[ Line #2 ]=========================
       newline
+      history
       prompt_char             # prompt symbol
   )
 
@@ -45,6 +47,15 @@ fi
       status                  # exit code of the last command
       command_execution_time  # duration of the last command
       background_jobs         # presence of background jobs
+      # ram
+      # date
+      # host
+      # ip
+      # public_ip
+      # load
+      # custom_elixir_version
+      # custom_ruby_version
+      # custom_node_version
       # virtualenv            # python virtual environment (https://docs.python.org/3/library/venv.html)
       # anaconda              # conda environment (https://conda.io/)
       # pyenv                 # python environment (https://github.com/pyenv/pyenv)
@@ -54,12 +65,29 @@ fi
       # node_version          # node.js version
       # kubecontext           # current kubernetes context (https://kubernetes.io/)
       context                 # user@host
+      root_indicator
       # =========================[ Line #2 ]=========================
       newline
       # public_ip             # public IP address
       # battery               # internal battery
       # time                  # current time
   )
+
+  #####################################
+  # MY CUSTOM PROMPT SEGMENTS
+  # these functions are defined in dotfiles/zsh/prompt.zsh
+  #####################################
+  typeset -g POWERLEVEL9K_CUSTOM_ELIXIR_VERSION="asdf_elixir_version"
+  typeset -g POWERLEVEL9K_CUSTOM_ELIXIR_VERSION_FOREGROUND="blue"
+
+  typeset -g POWERLEVEL9K_CUSTOM_RUBY_VERSION="asdf_ruby_version"
+  typeset -g POWERLEVEL9K_CUSTOM_RUBY_VERSION_FOREGROUND="red"
+
+  typeset -g POWERLEVEL9K_CUSTOM_NODE_VERSION="asdf_node_version"
+  typeset -g POWERLEVEL9K_CUSTOM_NODE_VERSION_FOREGROUND="green"
+  #####################################
+  # END MY CUSTOM PROMPT SEGMENTS
+  #####################################
 
   # Basic style options that define the overall look of your prompt.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background

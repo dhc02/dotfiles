@@ -1,3 +1,23 @@
+asdf_elixir_version() {
+  if [ $commands[asdf] ]; then
+    local version=$(asdf current elixir | awk '{print $1}')
+    echo -n $version
+  fi
+}
+
+asdf_ruby_version() {
+  if [ $commands[asdf] ]; then
+    local version=$(asdf current ruby | awk '{print $1}')
+    echo -n $version
+  fi
+}
+
+asdf_node_version() {
+  if [ $commands[asdf] ]; then
+    local version=$(asdf current nodejs | awk '{print $1}')
+    echo -n $version
+  fi
+}
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export PS1='%m:%3~$(git_info_for_prompt)%# '
 # else
