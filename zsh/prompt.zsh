@@ -1,103 +1,112 @@
-autoload colors && colors
-# cheers, @ehrenmurdick
-# http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export PS1='%m:%3~$(git_info_for_prompt)%# '
+# else
+#   export PS1='%3~$(git_info_for_prompt)%# '
+# fi
 
-if (( $+commands[git] ))
-then
-  git="$commands[git]"
-else
-  git="/usr/bin/git"
-fi
+# export LSCOLORS="exfxcxdxbxegedabagacad"
+# export CLICOLOR=true
 
-git_branch() {
-  echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
-}
+# autoload colors && colors
+# # cheers, @ehrenmurdick
+# # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
-git_short_sha () {
-  # Formats prompt string for current git commit short SHA
-  echo "($($git rev-parse --short HEAD 2> /dev/null))"
-}
+# if (( $+commands[git] ))
+# then
+#   git="$commands[git]"
+# else
+#   git="/usr/bin/git"
+# fi
 
-git_dirty() {
-  if $(! $git status -s &> /dev/null)
-  then
-    echo ""
-  else
-    if [[ $($git status --porcelain) == "" ]]
-    then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info) $(git_short_sha)%{$reset_color%}"
-    else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info) $(git_short_sha)%{$reset_color%}"
-    fi
-  fi
-}
+# git_branch() {
+#   echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+# }
 
-git_prompt_info () {
- ref=$($git symbolic-ref HEAD 2>/dev/null) || return
-# echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
- echo "${ref#refs/heads/}"
-}
+# git_short_sha () {
+#   # Formats prompt string for current git commit short SHA
+#   echo "($($git rev-parse --short HEAD 2> /dev/null))"
+# }
 
-unpushed () {
-  $git cherry -v @{upstream} 2>/dev/null
-}
+# git_dirty() {
+#   if $(! $git status -s &> /dev/null)
+#   then
+#     echo ""
+#   else
+#     if [[ $($git status --porcelain) == "" ]]
+#     then
+#       echo "on %{$fg_bold[green]%}$(git_prompt_info) $(git_short_sha)%{$reset_color%}"
+#     else
+#       echo "on %{$fg_bold[red]%}$(git_prompt_info) $(git_short_sha)%{$reset_color%}"
+#     fi
+#   fi
+# }
 
-need_push () {
-  if [[ $(unpushed) == "" ]]
-  then
-    echo " "
-  else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
-  fi
-}
+# git_prompt_info () {
+#  ref=$($git symbolic-ref HEAD 2>/dev/null) || return
+# # echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
+#  echo "${ref#refs/heads/}"
+# }
 
-ruby_version() {
-  if (( $+commands[rbenv] ))
-  then
-    echo "ruby-$(rbenv version | awk '{print $1}')"
-  fi
+# unpushed () {
+#   $git cherry -v @{upstream} 2>/dev/null
+# }
 
-  if (( $+commands[rvm-prompt] ))
-  then
-    echo "$(rvm-prompt | awk '{print $1}')"
-  fi
-}
+# need_push () {
+#   if [[ $(unpushed) == "" ]]
+#   then
+#     echo " "
+#   else
+#     echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+#   fi
+# }
 
-elixir_version() {
-  if (( $+commands[elixir] ))
-  then
-    echo "elixir-$(asdf current elixir | awk '{print $1}')"
-  fi
-}
+# ruby_version() {
+#   if (( $+commands[rbenv] ))
+#   then
+#     echo "ruby-$(rbenv version | awk '{print $1}')"
+#   fi
 
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
-  else
-    echo ""
-  fi
-}
+#   if (( $+commands[rvm-prompt] ))
+#   then
+#     echo "$(rvm-prompt | awk '{print $1}')"
+#   fi
+# }
 
-elixir_prompt() {
-  if ! [[ -z "$(elixir_version)" ]]
-  then
-    echo "%{$fg_bold[yellow]%}$(elixir_version)%{$reset_color%} "
-  else
-    echo ""
-  fi
-}
+# elixir_version() {
+#   if (( $+commands[elixir] ))
+#   then
+#     echo "elixir-$(asdf current elixir | awk '{print $1}')"
+#   fi
+# }
 
-directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
-}
+# rb_prompt() {
+#   if ! [[ -z "$(ruby_version)" ]]
+#   then
+#     echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
+#   else
+#     echo ""
+#   fi
+# }
 
-export PROMPT=$'\n-> $(directory_name) $(git_dirty)$(need_push)\n› '
-set_prompt () {
-  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
-}
+# elixir_prompt() {
+#   if ! [[ -z "$(elixir_version)" ]]
+#   then
+#     echo "%{$fg_bold[yellow]%}$(elixir_version)%{$reset_color%} "
+#   else
+#     echo ""
+#   fi
+# }
 
-precmd() {
-  title "zsh" "%m" "%55<...<%~"
-  set_prompt
-}
+# directory_name() {
+#   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+# }
+
+# export PROMPT=$'\n-> $(directory_name) $(git_dirty)$(need_push)\n› '
+# set_prompt () {
+#   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
+# }
+
+# precmd() {
+#   title "zsh" "%m" "%55<...<%~"
+#   set_prompt
+# }
