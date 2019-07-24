@@ -25,5 +25,7 @@ source /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-
 fpath+=( /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-gusaiani-SLASH-elixir-oh-my-zsh )
 source /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-joow-SLASH-youtube-dl/youtube-dl.plugin.zsh
 fpath+=( /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-joow-SLASH-youtube-dl )
+source /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-gangleri-SLASH-vue/vue.plugin.zsh
+fpath+=( /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-gangleri-SLASH-vue )
 source /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-agkozak-SLASH-zsh-z/zsh-z.plugin.zsh
 fpath+=( /Users/donnie/Libary/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-agkozak-SLASH-zsh-z )

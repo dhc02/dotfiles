@@ -28,13 +28,13 @@ fi
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       # =========================[ Line #1 ]=========================
-      # os_icon               # os identifier
+      os_icon               # os identifier
       dir                     # current directory
       dir_writable
       vcs                     # git status
       # =========================[ Line #2 ]=========================
       newline
-      history
+      # history
       prompt_char             # prompt symbol
   )
 
@@ -66,6 +66,7 @@ fi
       # kubecontext           # current kubernetes context (https://kubernetes.io/)
       context                 # user@host
       root_indicator
+      history
       # =========================[ Line #2 ]=========================
       newline
       # public_ip             # public IP address
@@ -91,8 +92,8 @@ fi
 
   # Basic style options that define the overall look of your prompt.
   typeset -g POWERLEVEL9K_BACKGROUND=                            # transparent background
-  typeset -g POWERLEVEL9K_{LEFT,RIGHT}_{LEFT,RIGHT}_WHITESPACE=' '  # no surrounding whitespace
-  typeset -g POWERLEVEL9K_RPROMPT_ON_NEWLINE=false               # align the first left/right lines
+  typeset -g POWERLEVEL9K_{LEFT,RIGHT}_{LEFT,RIGHT}_WHITESPACE=''  # no surrounding whitespace
+  typeset -g POWERLEVEL9K_RPROMPT_ON_NEWLINE=true               # align the first left/right lines
   typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SUBSEGMENT_SEPARATOR=' '  # separate segments with a space
   typeset -g POWERLEVEL9K_{LEFT,RIGHT}_SEGMENT_SEPARATOR=        # no end-of-line symbol
 
@@ -117,7 +118,7 @@ fi
   #
   # Note: Many default icons cannot be displayed with system fonts. You'll need to install a
   # Powerline font to use them. See POWERLEVEL9K_MODE below.
-  typeset -g POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=
+  typeset -g POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION='${P9K_VISUAL_IDENTIFIER}'
 
   # This option doesn't make a difference unless you've enabled default icons for all or some
   # prompt segments (see POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION above). Default icons depend on
@@ -166,7 +167,7 @@ fi
   # the number of prompt lines. You'll probably want to set POWERLEVEL9K_SHOW_RULER=false
   # if using this. You might also like POWERLEVEL9K_PROMPT_ADD_NEWLINE=false for more compact
   # prompt.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR=' '
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='—'
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # The color of the filler.
     typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=237
@@ -184,6 +185,8 @@ fi
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=212
   # Want to display a different icon? Uncomment the next line and set the desired value.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=$'\uFB8A'
+
+  typeset -g POWERLEVEL9K_HISTORY_FOREGROUND=grey
 
   # Green prompt symbol if the last command succeeded.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=76
@@ -225,7 +228,7 @@ fi
   # opening a directory in the file manager simply by clicking the link.
   # Can also be handy when the directory is shortened, as it allows you to see
   # the full directory that was used in previous commands.
-  typeset -g POWERLEVEL9K_DIR_HYPERLINK=false
+  typeset -g POWERLEVEL9K_DIR_HYPERLINK=true
 
   # Git status: feature:master#tag ⇣42⇡42 *42 merge ~42 +42 !42 ?42.
   # We are using parameters defined by the gitstatus plugin. See reference:
@@ -259,7 +262,7 @@ fi
   vcs="\${P9K_CONTENT:-$vcs}"
 
   # No branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
 
   # Disable the default Git status formatting.
   typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=true
@@ -416,6 +419,8 @@ fi
   # commands will contain the start times of their commands as opposed to the default
   # behavior where they contain the end times of their preceding commands.
   typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
+
+  ## TESTS
 }
 
 (( ! p10k_lean_restore_aliases )) || setopt aliases
