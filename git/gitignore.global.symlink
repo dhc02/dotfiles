@@ -2,7 +2,6 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-# Thumbnails
-._*
 id_rsa
-node_modules
+node_modules/
+.elixir_ls/
