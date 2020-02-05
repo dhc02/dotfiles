@@ -1,0 +1,8 @@
+*.swp
+.DS_Store
+.AppleDouble
+.LSOverride
+id_rsa
+node_modules/
+.elixir_ls/
+.elixir_ls

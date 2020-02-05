@@ -1,0 +1,15 @@
+romkatv/powerlevel10k
+robbyrussell/oh-my-zsh path:plugins/aws
+robbyrussell/oh-my-zsh path:plugins/asdf
+robbyrussell/oh-my-zsh path:plugins/mix-fast
+zdharma/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions
+marzocchi/zsh-notify
+zpm-zsh/autoenv
+MikeDacre/careful_rm
+gusaiani/elixir-oh-my-zsh
+joow/youtube-dl
+gangleri/vue
+agkozak/zsh-z
