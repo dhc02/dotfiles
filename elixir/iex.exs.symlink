@@ -1,0 +1,98 @@
+# Will be using `ANSI`
+Application.put_env(:elixir, :ansi_enabled, true)
+
+# Phoenix Support
+import_if_available(Plug.Conn)
+import_if_available(Phoenix.HTML)
+import_if_available(Ecto.Query)
+import_if_available(Ecto.Changeset)
+
+# underscore-delimited number like 5_000 or "infinity"
+inspect_limit = 5_000
+history_size = 100
+
+# Letting people know what iex.exs they are using
+IO.puts(
+  IO.ANSI.light_black_background() <>
+    IO.ANSI.bright() <>
+    IO.ANSI.underline() <>
+    "Using global .iex.exs (located in ~/.iex.exs)" <> IO.ANSI.reset() <> "\n"
+)
+
+IEx.configure(
+  colors: [
+    syntax_colors: [
+      number: :light_yellow,
+      atom: :light_cyan,
+      string: :light_black,
+      boolean: [:red],
+      nil: [:magenta, :bright]
+    ],
+    ls_directory: :cyan,
+    ls_device: :yellow,
+    doc_code: :green,
+    doc_inline_code: :magenta,
+    doc_headings: [:cyan, :underline],
+    doc_title: [:cyan, :bright, :underline]
+  ],
+  inspect: [pretty: true, limit: inspect_limit],
+  history_size: history_size,
+  alive_prompt:
+    [
+      # ANSI CHA, move cursor to column 1
+      "\e[G",
+      :green,
+      "%prefix ",
+      :yellow,
+      "(%node) ",
+      :cyan,
+      "%counter",
+      " ",
+      :white,
+      "✑",
+      :reset
+    ]
+    |> IO.ANSI.format()
+    |> IO.chardata_to_string(),
+  default_prompt:
+    [
+      # ANSI CHA, move cursor to column 1
+      "\e[G",
+      :green,
+      "%prefix ",
+      :cyan,
+      "%counter",
+      " ",
+      :white,
+      "✑",
+      :reset
+    ]
+    |> IO.ANSI.format()
+    |> IO.chardata_to_string()
+)
+
+# Mock data
+
+dwarves = [
+  "Fili",
+  "Kili",
+  "Oin",
+  "Gloin",
+  "Thorin",
+  "Dwalin",
+  "Balin",
+  "Bifur",
+  "Bofur",
+  "Bombur",
+  "Dori",
+  "Nori",
+  "Ori"
+]
+
+fellowship = %{
+  hobbits: ["Frodo", "Samwise", "Merry", "Pippin"],
+  humans: ["Aragorn", "Boromir"],
+  dwarves: ["Gimli"],
+  elves: ["Legolas"],
+  wizards: ["Gandolf"]
+}
