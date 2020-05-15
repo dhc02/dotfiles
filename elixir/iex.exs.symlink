@@ -96,3 +96,13 @@ fellowship = %{
   elves: ["Legolas"],
   wizards: ["Gandolf"]
 }
+
+# HELPER FUNCTIONS
+
+defmodule DC do
+  def update(schema, changes) do
+    schema
+    |> Ecto.Changeset.change(changes)
+    |> Repo.update()
+  end
+end
