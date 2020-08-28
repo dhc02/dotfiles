@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# open _notes folder in VS Code
+#
+code ~/Google\ Drive/_notes/notes.code-workspace
