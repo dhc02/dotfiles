@@ -1,0 +1,1 @@
+export PATH=/Users/Donnie/Applications/bin:$PATH

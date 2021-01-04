@@ -6,7 +6,6 @@ zdharma/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-completions
-marzocchi/zsh-notify
 zpm-zsh/autoenv
 MikeDacre/careful_rm
 gusaiani/elixir-oh-my-zsh

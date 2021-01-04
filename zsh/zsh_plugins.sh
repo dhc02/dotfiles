@@ -15,8 +15,6 @@ source /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.co
 fpath+=( /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-history-substring-search )
 source /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions/zsh-completions.plugin.zsh
 fpath+=( /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions )
-source /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-marzocchi-SLASH-zsh-notify/notify.plugin.zsh
-fpath+=( /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-marzocchi-SLASH-zsh-notify )
 source /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zpm-zsh-SLASH-autoenv/autoenv.plugin.zsh
 fpath+=( /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-zpm-zsh-SLASH-autoenv )
 source /Users/Donnie/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-MikeDacre-SLASH-careful_rm/careful_rm.plugin.zsh
