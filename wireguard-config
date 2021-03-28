@@ -1,0 +1,10 @@
+[Interface]
+PrivateKey = EPlInlN+mHoJmU+A+LAKGjvlv50aFAGrgwLkVxI4dGw=
+Address = 10.6.0.2/24
+DNS = 10.6.0.1
+
+[Peer]
+PublicKey = aUw3usPeA5WP6zXxTwapaqNl1Tc6hT2LCzmNZ1vc2FE=
+PresharedKey = sg0kF4G5e/btERvMCK5WgteSJGQiSpipE0Wrir4S+74=
+Endpoint = home.donnieclapp.com:51820
+AllowedIPs = 0.0.0.0/0, ::0/0
