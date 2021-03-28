@@ -1,0 +1,4 @@
+---
+benchmark: false
+update_sources: true
+gem: --no-document --suggestions

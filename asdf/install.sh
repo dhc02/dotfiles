@@ -15,3 +15,7 @@ then
 fi
 
 exit 0
+
+# update asdf and plugins
+asdf update
+asdf plugin-update -all
